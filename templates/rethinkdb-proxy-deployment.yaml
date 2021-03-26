@@ -28,6 +28,10 @@ spec:
 {{ toYaml .Values.proxy.podAnnotations | indent 8 }}
       {{- end }}
     spec:
+{{- if .Values.proxy.affinity }}
+      affinity:
+{{ toYaml .Values.proxy.affinity | indent 8 }}
+{{- end }}
       serviceAccountName: {{ template "rethinkdb.serviceAccountName" . }}
       containers:
         - name: {{ template "rethinkdb.name" . }}-proxy
