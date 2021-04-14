@@ -1,7 +1,7 @@
 # Specs for the RethinkDB image
 image:
   name: codylundquist/helm-rethinkdb-cluster
-  tag: 0.1.0
+  tag: 2.4.0
   pullPolicy: IfNotPresent
 
 # RethinkDB Cluster Config
