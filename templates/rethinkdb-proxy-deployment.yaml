@@ -1,3 +1,4 @@
+{{- if not .Values.proxy.disabled }}
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -97,3 +98,4 @@ spec:
             sources:
             - secret:
                 name: {{ template "rethinkdb.fullname" . }}
+{{- end }}
